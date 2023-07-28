@@ -24,14 +24,25 @@
           <option value="division">División</option>
         </select>
         
-        <button type="button" onclick="limpiarCeldas()">Limpiar Celdas</button>
+        <button type="button" onclick="MostrarResultado()">Mostrar Resultado</button>
+        <button type="button" onclick="LimpiarCeldas()">Limpiar Celdas</button>
       </form>
       <p id="resultado" class="resultado-text"></p>
     </div>
   </div>
 
   <script>
-    function limpiarCeldas() {
+    function MostrarResultado() {
+      const numero1 = parseFloat(document.getElementById("numero1").value);
+      const numero2 = parseFloat(document.getElementById("numero2").value);
+      const operacion = document.getElementById("operacion").value;
+      let resultado;
+
+      const resultadoParrafo = document.getElementById("resultado");
+      resultadoParrafo.innerText = `Resultado: ${resultado}`;
+    }
+
+    function LimpiarCeldas() {
       document.getElementById("numero1").value = "";
       document.getElementById("numero2").value = "";
       document.getElementById("operacion").selectedIndex = 0;
